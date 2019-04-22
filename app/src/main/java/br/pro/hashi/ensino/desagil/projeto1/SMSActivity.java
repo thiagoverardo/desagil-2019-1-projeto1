@@ -27,6 +27,7 @@ public class SMSActivity extends AppCompatActivity {
 
         Button bt_morse  = findViewById(R.id.morse_button);
         Button bt_enter = findViewById(R.id.enter_button);
+        Button bt_back = findViewById(R.id.backspace);
         EditText morse = findViewById(R.id.morse_converted);
         TextView alphanum = findViewById(R.id.text_alpha);
         Translator translator = new Translator();
@@ -46,13 +47,27 @@ public class SMSActivity extends AppCompatActivity {
             String code = morse.getText().toString();
             String letra = translator.morseToChar(code);
             if (letra == null) {
-                alphanum.setText(alphanum.getText() + "");
-                showToast("Caracter inválido!");
+                alphanum.setText(alphanum.getText() + " ");
             } else {
                 alphanum.setText(alphanum.getText() + letra);
                 }
             morse.setText("");
+        });
 
+        bt_back.setOnClickListener((view) -> {
+            String escrito = alphanum.getText().toString();
+            int tamanho = escrito.length();
+            if (tamanho != 0) {
+                String novo = escrito.substring(0, tamanho - 1);
+                alphanum.setText(novo);
+            } else {
+                alphanum.setText("");
+            }
+        });
+
+        bt_back.setOnLongClickListener((view) -> {
+            alphanum.setText("");
+            return true;
         });
     }
 }
