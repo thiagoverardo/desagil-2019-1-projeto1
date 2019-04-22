@@ -6,29 +6,68 @@
     tools:context=".SMSActivity">
 
     <TextView
-        android:id="@+id/text_example"
+        android:id="@+id/text_morse"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_above="@+id/morse_converted"
-        android:layout_marginBottom="-1dp"
+        android:layout_marginBottom="2dp"
+        android:text="Morse:"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/alpha_label"
+        android:layout_width="395dp"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/morse_converted"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="137dp"
         android:text="Mensagem:"
         android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/text_alpha"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/morse_converted"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="10sp"
+        android:layout_marginEnd="18dp"
+        android:layout_marginBottom="83dp"
+        android:padding="10sp"
+        android:text="" />
 
     <EditText
         android:id="@+id/morse_converted"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_above="@+id/morse_button"
-        android:layout_marginBottom="1dp"
-        android:hint="Exemplo de EditText"
+        android:layout_marginBottom="115dp"
+        android:hint="Preview"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
         android:padding="10sp" />
 
     <Button
         android:id="@+id/morse_button"
         android:layout_width="match_parent"
-        android:layout_height="356dp"
+        android:layout_height="200dp"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="4dp"
         android:text="Morse" />
+
+    <Button
+        android:id="@+id/enter_button"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_above="@+id/morse_button"
+        android:layout_marginBottom="6dp"
+        android:text="Enter" />
 
 </RelativeLayout>
