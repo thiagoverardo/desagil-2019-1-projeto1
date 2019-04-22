@@ -27,7 +27,7 @@ public class SMSActivity extends AppCompatActivity {
 
         Button bt_morse  = findViewById(R.id.morse_button);
         Button bt_enter = findViewById(R.id.enter_button);
-        Button bt_back = findViewById(R.id.backspace);
+        Button bt_back = findViewById(R.id.backspace_button);
         EditText morse = findViewById(R.id.morse_converted);
         TextView alphanum = findViewById(R.id.text_alpha);
         Translator translator = new Translator();

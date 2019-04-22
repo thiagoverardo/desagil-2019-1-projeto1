@@ -73,7 +73,7 @@
         android:text="Enter" />
 
     <Button
-        android:id="@+id/backspace"
+        android:id="@+id/backspace_button"
         android:layout_width="115dp"
         android:layout_height="100dp"
         android:layout_above="@+id/morse_button"
