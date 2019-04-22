@@ -10,6 +10,16 @@ import android.widget.Toast;
 
 public class SMSActivity extends AppCompatActivity {
 
+    // Método de conveniência para mostrar uma bolha de texto.
+    private void showToast(String text) {
+
+        // Constrói uma bolha de duração curta.
+        Toast toast = Toast.makeText(this, text, Toast.LENGTH_SHORT);
+
+        // Mostra essa bolha.
+        toast.show();
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,9 +47,10 @@ public class SMSActivity extends AppCompatActivity {
             String letra = translator.morseToChar(code);
             if (letra == null) {
                 alphanum.setText(alphanum.getText() + "");
+                showToast("Caracter inválido!");
             } else {
                 alphanum.setText(alphanum.getText() + letra);
-            }
+                }
             morse.setText("");
 
         });
