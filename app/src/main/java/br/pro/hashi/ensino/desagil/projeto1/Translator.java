@@ -17,6 +17,7 @@ public class Translator {
 
         map = new HashMap<>();
 
+        map.put("", " ");
         map.put(".-", "A");
         map.put("-...", "B");
         map.put("-.-.", "C");
