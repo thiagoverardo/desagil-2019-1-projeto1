@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PhoneActivity">
+
+    <TextView
+        android:id="@+id/text_x"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="24dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        android:text="Mensagem a ser enviada:" />
+
+    <TextView
+        android:id="@+id/text_message"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/text_x"
+        android:layout_marginTop="6dp"
+        android:layout_marginStart="18dp"
+        android:layout_marginEnd="18dp"
+        android:hint="Preview" />
+
+    <TextView
+        android:id="@+id/text_number"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="75dp"
+        android:layout_marginEnd="15dp"
+        android:text="Número:" />
+
+    <TextView
+        android:id="@+id/edit_number"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/text_number"
+        android:layout_marginTop="6dp"
+        android:layout_marginStart="18dp"
+        android:layout_marginEnd="18dp"
+        android:inputType="phone"
+        android:hint="Número para enviar a mensagem" />
+
+    <TextView
+        android:id="@+id/text_morse"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/morse_field"
+        android:text="Morse:"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/morse_field"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/morse_button"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="86dp"
+        android:hint="Preview"
+        android:padding="10sp" />
+
+    <Button
+        android:id="@+id/number_brother"
+        android:layout_width="110dp"
+        android:layout_height="72dp"
+        android:layout_above="@+id/morse_button"
+        android:layout_marginBottom="1dp"
+        android:text="Irmão" />
+
+    <Button
+        android:id="@+id/number_cuidador"
+        android:layout_width="110dp"
+        android:layout_height="72dp"
+        android:layout_above="@+id/morse_button"
+        android:layout_marginBottom="0dp"
+        android:layout_toEndOf="@+id/number_brother"
+        android:text="Cuidador" />
+
+    <Button
+        android:id="@+id/backspace_button"
+        android:layout_width="110dp"
+        android:layout_height="72dp"
+        android:layout_above="@+id/morse_button"
+        android:layout_marginBottom="0dp"
+        android:layout_toEndOf="@+id/number_cuidador"
+        android:text="Backspace" />
+
+    <Button
+        android:id="@+id/send_button"
+        android:layout_alignParentEnd="true"
+        android:layout_width="wrap_content"
+        android:layout_height="72dp"
+        android:layout_above="@+id/morse_button"
+        android:layout_marginBottom="0dp"
+        android:layout_toEndOf="@+id/backspace_button"
+        android:text="Send" />
+
+    <Button
+        android:id="@+id/morse_button"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="4dp"
+        android:text="Morse" />
+
+
+
+</RelativeLayout>

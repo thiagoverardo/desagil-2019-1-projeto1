@@ -1,14 +1,17 @@
 package br.pro.hashi.ensino.desagil.projeto1;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class SMSActivity extends AppCompatActivity {
+public class MessageActivity extends AppCompatActivity {
+    public static final String MESSAGE = "br.pro.hashi.ensino.desagil.projeto1.MESSAGE";
+
+    private String mensagem;
 
     // Método de conveniência para mostrar uma bolha de texto.
     private void showToast(String text) {
@@ -20,54 +23,78 @@ public class SMSActivity extends AppCompatActivity {
         toast.show();
     }
 
+
+    private void startPhoneActivity() {
+
+        // Constrói uma Intent que corresponde ao pedido de "iniciar Activity".
+        Intent intent = new Intent(this, PhoneActivity.class);
+        intent.putExtra(MESSAGE, mensagem);
+        // Inicia a Activity especificada na Intent.
+        startActivity(intent);
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_sms);
+        setContentView(R.layout.activity_message);
 
         Button bt_morse  = findViewById(R.id.morse_button);
         Button bt_enter = findViewById(R.id.enter_button);
         Button bt_back = findViewById(R.id.backspace_button);
-        EditText morse = findViewById(R.id.morse_converted);
-        TextView alphanum = findViewById(R.id.text_alpha);
+        TextView morse = findViewById(R.id.morse_field);
+        TextView alfanum = findViewById(R.id.text_alpha);
         Translator translator = new Translator();
 
         bt_morse.setOnLongClickListener((view) -> {
             morse.setText(morse.getText() + "-");
-            //Toast.makeText(this, "LongClick", Toast.LENGTH_SHORT).show();
             return true;
         });
 
         bt_morse.setOnClickListener((view) -> {
             morse.setText(morse.getText() + ".");
-            //Toast.makeText(this, "Click", Toast.LENGTH_SHORT).show();
         });
 
         bt_enter.setOnClickListener((view) -> {
             String code = morse.getText().toString();
             String letra = translator.morseToChar(code);
             if (letra == null) {
-                alphanum.setText(alphanum.getText() + "");
+                alfanum.setText(alfanum.getText() + "");
                 showToast("Caracter inválido!");
             } else {
-                alphanum.setText(alphanum.getText() + letra);
-                }
+                alfanum.setText(alfanum.getText() + letra);
+            }
             morse.setText("");
         });
 
+        bt_enter.setOnLongClickListener((view) -> {
+            String message = alfanum.getText().toString();
+
+            if (message.isEmpty()) {
+                showToast("Mensagem inválida!");
+                return true;
+            }
+
+            this.mensagem = alfanum.getText().toString();
+
+            startPhoneActivity();
+
+            alfanum.setText("");
+            return true;
+        });
+
         bt_back.setOnClickListener((view) -> {
-            String escrito = alphanum.getText().toString();
+            String escrito = alfanum.getText().toString();
             int tamanho = escrito.length();
             if (tamanho != 0) {
                 String novo = escrito.substring(0, tamanho - 1);
-                alphanum.setText(novo);
+                alfanum.setText(novo);
             } else {
-                alphanum.setText("");
+                alfanum.setText("");
             }
         });
 
         bt_back.setOnLongClickListener((view) -> {
-            alphanum.setText("");
+            alfanum.setText("");
             return true;
         });
     }
