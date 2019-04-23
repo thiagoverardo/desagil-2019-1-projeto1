@@ -16,11 +16,11 @@ public class MainActivity extends AppCompatActivity {
     private static final int REQUEST_SEND_SMS = 0;
 
 
-    // Método de conveniência para iniciar a SMSActivity.
-    private void startSMSActivity() {
+    // Método de conveniência para iniciar a MessageActivity.
+    private void startMessageActivity() {
 
         // Constrói uma Intent que corresponde ao pedido de "iniciar Activity".
-        Intent intent = new Intent(this, SMSActivity.class);
+        Intent intent = new Intent(this, MessageActivity.class);
 
         // Inicia a Activity especificada na Intent.
         startActivity(intent);
@@ -39,8 +39,8 @@ public class MainActivity extends AppCompatActivity {
             // Verifica se o aplicativo tem a permissão desejada.
             if (ContextCompat.checkSelfPermission(this, Manifest.permission.SEND_SMS) == PackageManager.PERMISSION_GRANTED) {
 
-                // Se tem, podemos iniciar a SMSActivity direto.
-                startSMSActivity();
+                // Se tem, podemos iniciar a MessageActivity direto.
+                startMessageActivity();
             } else {
 
                 // Senão, precisamos pedir essa permissão.
@@ -69,8 +69,8 @@ public class MainActivity extends AppCompatActivity {
         // escolheu simplesmente ignorar o pedido e não responder nada.
         if (requestCode == REQUEST_SEND_SMS && grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
 
-            // Se foi positiva, podemos iniciar a SMSActivity.
-            startSMSActivity();
+            // Se foi positiva, podemos iniciar a MessageActivity.
+            startMessageActivity();
         }
     }
 }
