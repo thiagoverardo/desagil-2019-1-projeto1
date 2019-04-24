@@ -58,7 +58,7 @@ public class MessageActivity extends AppCompatActivity {
             String code = morse.getText().toString();
             String letra = translator.morseToChar(code);
             if (letra == null) {
-                alfanum.setText(alfanum.getText() + "");
+                alfanum.setText(alfanum.getText() + " ");
                 showToast("Caracter inválido!");
             } else {
                 alfanum.setText(alfanum.getText() + letra);
