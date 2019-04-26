@@ -52,7 +52,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_above="@+id/morse_field"
-        android:text="Morse:"
+        android:text="Morse Number:"
         android:layout_marginStart="15dp"
         android:layout_marginEnd="15dp"
         android:textSize="15sp" />
@@ -65,7 +65,7 @@
         android:layout_marginStart="15dp"
         android:layout_marginEnd="15dp"
         android:layout_marginBottom="86dp"
-        android:hint="Preview"
+        android:hint="Insert the new number here"
         android:padding="10sp" />
 
     <Button

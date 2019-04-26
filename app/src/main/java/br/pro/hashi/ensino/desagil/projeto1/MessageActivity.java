@@ -38,12 +38,32 @@ public class MessageActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_message);
 
+        Button bt_message1 = findViewById(R.id.message1);
+        Button bt_message2 = findViewById(R.id.message2);
+        Button bt_message3 = findViewById(R.id.message3);
+        Button bt_message4 = findViewById(R.id.message4);
         Button bt_morse  = findViewById(R.id.morse_button);
         Button bt_enter = findViewById(R.id.enter_button);
         Button bt_back = findViewById(R.id.backspace_button);
         TextView morse = findViewById(R.id.morse_field);
         TextView alfanum = findViewById(R.id.text_alpha);
         Translator translator = new Translator();
+
+        bt_message1.setOnClickListener((view) -> {
+            alfanum.setText("ESTOU COM FOME");
+        });
+
+        bt_message2.setOnClickListener((view) -> {
+            alfanum.setText("ESTOU COM SEDE");
+        });
+
+        bt_message3.setOnClickListener((view) -> {
+            alfanum.setText("QUERO IR AO BANHEIRO");
+        });
+
+        bt_message4.setOnClickListener((view) -> {
+            alfanum.setText("ESTOU COM SONO");
+        });
 
         bt_morse.setOnLongClickListener((view) -> {
             morse.setText(morse.getText() + "-");
