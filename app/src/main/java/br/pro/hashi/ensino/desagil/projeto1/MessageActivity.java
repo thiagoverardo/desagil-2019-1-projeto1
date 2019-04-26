@@ -1,10 +1,9 @@
 package br.pro.hashi.ensino.desagil.projeto1;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -22,7 +21,6 @@ public class MessageActivity extends AppCompatActivity {
         // Mostra essa bolha.
         toast.show();
     }
-
 
     private void startPhoneActivity() {
 
@@ -49,39 +47,29 @@ public class MessageActivity extends AppCompatActivity {
         TextView alfanum = findViewById(R.id.text_alpha);
         Translator translator = new Translator();
 
-        bt_message1.setOnClickListener((view) -> {
-            alfanum.setText("ESTOU COM FOME");
-        });
+        bt_message1.setOnClickListener((view) -> alfanum.setText("ESTOU COM FOME"));
 
-        bt_message2.setOnClickListener((view) -> {
-            alfanum.setText("ESTOU COM SEDE");
-        });
+        bt_message2.setOnClickListener((view) -> alfanum.setText("ESTOU COM SEDE"));
 
-        bt_message3.setOnClickListener((view) -> {
-            alfanum.setText("QUERO IR AO BANHEIRO");
-        });
+        bt_message3.setOnClickListener((view) -> alfanum.setText("QUERO IR AO BANHEIRO"));
 
-        bt_message4.setOnClickListener((view) -> {
-            alfanum.setText("ESTOU COM SONO");
-        });
+        bt_message4.setOnClickListener((view) -> alfanum.setText("ESTOU COM SONO"));
 
         bt_morse.setOnLongClickListener((view) -> {
             morse.setText(morse.getText() + "-");
             return true;
         });
 
-        bt_morse.setOnClickListener((view) -> {
-            morse.setText(morse.getText() + ".");
-        });
+        bt_morse.setOnClickListener((view) -> morse.setText(morse.getText() + "."));
 
         bt_enter.setOnClickListener((view) -> {
             String code = morse.getText().toString();
-            String letra = translator.morseToChar(code);
-            if (letra == null) {
+            char letra = translator.morseToChar(code);
+            if (letra == ' ') {
                 alfanum.setText(alfanum.getText() + " ");
                 showToast("Caracter inválido!");
             } else {
-                alfanum.setText(alfanum.getText() + letra);
+                alfanum.setText(alfanum.getText().toString() + letra);
             }
             morse.setText("");
         });

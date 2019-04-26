@@ -1,8 +1,8 @@
 package br.pro.hashi.ensino.desagil.projeto1;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.telephony.PhoneNumberUtils;
 import android.telephony.SmsManager;
 import android.widget.Button;
@@ -54,17 +54,15 @@ public class PhoneActivity extends AppCompatActivity {
             return true;
         });
 
-        bt_morse.setOnClickListener((view) -> {
-            morse.setText(morse.getText() + ".");
-        });
+        bt_morse.setOnClickListener((view) -> morse.setText(morse.getText() + "."));
 
         bt_send.setOnClickListener((view) -> {
             String code = morse.getText().toString();
-            String letra = translator.morseToChar(code);
-            if (letra == null) {
+            char letra = translator.morseToChar(code);
+            if (letra == ' ') {
                 showToast("Caracter inválido!");
             } else {
-                numero.setText(numero.getText() + letra);
+                numero.setText(numero.getText().toString() + letra);
             }
             morse.setText("");
         });
@@ -103,13 +101,9 @@ public class PhoneActivity extends AppCompatActivity {
             return true;
         });
 
-        bt_brother.setOnClickListener((view) -> {
-            numero.setText("11111111");
-        });
+        bt_brother.setOnClickListener((view) -> numero.setText("11111111"));
 
-        bt_cuidador.setOnClickListener((view) -> {
-            numero.setText("22222222");
-        });
+        bt_cuidador.setOnClickListener((view) -> numero.setText("22222222"));
     }
 }
 
