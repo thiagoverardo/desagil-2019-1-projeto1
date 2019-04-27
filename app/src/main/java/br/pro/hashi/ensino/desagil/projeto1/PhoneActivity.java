@@ -60,7 +60,8 @@ public class PhoneActivity extends AppCompatActivity {
             String code = morse.getText().toString();
             char letra = translator.morseToChar(code);
             if (letra == ' ') {
-                showToast("Caracter inválido!");
+                numero.setText(numero.getText());
+                showToast("Caractere inválido!");
             } else {
                 numero.setText(numero.getText().toString() + letra);
             }

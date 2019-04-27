@@ -1,6 +1,5 @@
 package br.pro.hashi.ensino.desagil.projeto1;
 
-
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.Queue;
@@ -234,24 +233,25 @@ public class Translator {
     // Você deve mudar o recheio deste método, de
     // acordo com os requisitos não-funcionais.
     public char morseToChar(String code) {
+        int lenght = code.length();
         Node current = root;
 
-        for (int i = 0; i < code.length(); i++) {
-            if (current != null) {
-                char dot_dash = code.charAt(i);
+        if (lenght <= 5) {
+            for (int i = 0; i < code.length(); i++) {
+                if (current != null) {
+                    char dot_dash = code.charAt(i);
 
-                if (dot_dash == '.') {
-                    current = current.getLeft();
-                } else if (dot_dash == '-') {
-                    current = current.getRight();
-                } else {
-                    return ' ';
+                    if (dot_dash == '.') {
+                        current = current.getLeft();
+                    } else if (dot_dash == '-') {
+                        current = current.getRight();
+                    }
                 }
-            } else {
-                return ' ';
             }
+            return current.getValue();
+        } else {
+            return ' ';
         }
-        return current.getValue();
     }
 
 
