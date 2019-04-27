@@ -18,143 +18,143 @@ public class Translator {
         root = new Node(' ');
         map = new HashMap<>();
 
-        Node E = new Node('e');
+        Node E = new Node('E');
         root.setLeft(E);
         E.setParent(root);
-        map.put('e', E);
+        map.put('E', E);
 
-        Node T = new Node('t');
+        Node T = new Node('T');
         root.setRight(T);
         T.setParent(root);
-        map.put('t', T);
+        map.put('T', T);
 
-        Node I = new Node('i');
+        Node I = new Node('I');
         E.setLeft(I);
         I.setParent(E);
-        map.put('i', I);
+        map.put('I', I);
 
-        Node A = new Node('a');
+        Node A = new Node('A');
         E.setRight(A);
         A.setParent(E);
-        map.put('a', A);
+        map.put('A', A);
 
-        Node N = new Node('n');
+        Node N = new Node('N');
         T.setLeft(N);
         N.setParent(T);
-        map.put('n', N);
+        map.put('N', N);
 
-        Node M = new Node('m');
+        Node M = new Node('M');
         T.setRight(M);
         M.setParent(T);
-        map.put('m', M);
+        map.put('M', M);
 
-        Node S = new Node('s');
+        Node S = new Node('S');
         I.setLeft(S);
         S.setParent(I);
-        map.put('s', S);
+        map.put('S', S);
 
-        Node U = new Node('u');
+        Node U = new Node('U');
         I.setRight(U);
         U.setParent(I);
-        map.put('u', U);
+        map.put('U', U);
 
-        Node R = new Node('r');
+        Node R = new Node('R');
         A.setLeft(R);
         R.setParent(A);
-        map.put('r', R);
+        map.put('R', R);
 
-        Node W = new Node('w');
+        Node W = new Node('W');
         A.setRight(W);
         W.setParent(A);
-        map.put('w', W);
+        map.put('W', W);
 
-        Node D = new Node('d');
+        Node D = new Node('D');
         N.setLeft(D);
         D.setParent(N);
-        map.put('d', D);
+        map.put('D', D);
 
-        Node K = new Node('k');
+        Node K = new Node('K');
         N.setRight(K);
         K.setParent(N);
-        map.put('k', K);
+        map.put('K', K);
 
-        Node G = new Node('g');
+        Node G = new Node('G');
         M.setLeft(G);
         G.setParent(M);
-        map.put('g', G);
+        map.put('G', G);
 
-        Node O = new Node('o');
+        Node O = new Node('O');
         M.setRight(O);
         O.setParent(M);
-        map.put('o', O);
+        map.put('O', O);
 
-        Node H = new Node('h');
+        Node H = new Node('H');
         S.setLeft(H);
         H.setParent(S);
-        map.put('h', H);
+        map.put('H', H);
 
-        Node V = new Node('v');
+        Node V = new Node('V');
         S.setRight(V);
         V.setParent(S);
-        map.put('v', V);
+        map.put('V', V);
 
-        Node F = new Node('f');
+        Node F = new Node('F');
         U.setLeft(F);
         F.setParent(U);
-        map.put('f', F);
+        map.put('F', F);
 
         Node UR = new Node(' ');
         U.setRight(UR);
         UR.setParent(U);
 
-        Node L = new Node('l');
+        Node L = new Node('L');
         R.setLeft(L);
         L.setParent(R);
-        map.put('l', L);
+        map.put('L', L);
 
         Node RR = new Node(' ');
         R.setRight(RR);
         RR.setParent(R);
 
-        Node P = new Node('p');
+        Node P = new Node('P');
         W.setLeft(P);
         P.setParent(W);
-        map.put('p', P);
+        map.put('P', P);
 
-        Node J = new Node('j');
+        Node J = new Node('J');
         W.setRight(J);
         J.setParent(W);
-        map.put('j', J);
+        map.put('J', J);
 
-        Node B = new Node('b');
+        Node B = new Node('B');
         D.setLeft(B);
         B.setParent(D);
-        map.put('b', B);
+        map.put('B', B);
 
-        Node X = new Node('x');
+        Node X = new Node('X');
         D.setRight(X);
         X.setParent(D);
-        map.put('x', X);
+        map.put('X', X);
 
-        Node C = new Node('c');
+        Node C = new Node('C');
         K.setLeft(C);
         C.setParent(K);
-        map.put('c', C);
+        map.put('C', C);
 
-        Node Y = new Node('y');
+        Node Y = new Node('Y');
         K.setRight(Y);
         Y.setParent(K);
-        map.put('y', Y);
+        map.put('Y', Y);
 
-        Node Z = new Node('z');
+        Node Z = new Node('Z');
         G.setLeft(Z);
         Z.setParent(G);
-        map.put('z', Z);
+        map.put('Z', Z);
 
-        Node Q = new Node('q');
+        Node Q = new Node('Q');
         G.setRight(Q);
         Q.setParent(G);
-        map.put('q', Q);
+        map.put('Q', Q);
 
         Node OE = new Node(' ');
         O.setLeft(OE);

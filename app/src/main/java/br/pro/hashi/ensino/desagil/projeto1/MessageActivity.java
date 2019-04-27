@@ -31,6 +31,22 @@ public class MessageActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    private void startAlphaMorseActivity() {
+
+        // Constrói uma Intent que corresponde ao pedido de "iniciar Activity".
+        Intent intent = new Intent(this, AlphaMorseActivity.class);
+        // Inicia a Activity especificada na Intent.
+        startActivity(intent);
+    }
+
+    private void startMorseAlphaActivity() {
+
+        // Constrói uma Intent que corresponde ao pedido de "iniciar Activity".
+        Intent intent = new Intent(this, MorseAlphaActivity.class);
+        // Inicia a Activity especificada na Intent.
+        startActivity(intent);
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,6 +59,8 @@ public class MessageActivity extends AppCompatActivity {
         Button bt_morse  = findViewById(R.id.morse_button);
         Button bt_enter = findViewById(R.id.enter_button);
         Button bt_back = findViewById(R.id.backspace_button);
+        Button bt_alphamorse = findViewById(R.id.alpha_morse);
+        Button bt_morsealpha = findViewById(R.id.morse_alpha);
         TextView morse = findViewById(R.id.morse_field);
         TextView alfanum = findViewById(R.id.text_alpha);
         Translator translator = new Translator();
@@ -104,6 +122,14 @@ public class MessageActivity extends AppCompatActivity {
         bt_back.setOnLongClickListener((view) -> {
             alfanum.setText("");
             return true;
+        });
+
+        bt_alphamorse.setOnClickListener((view) -> {
+            startAlphaMorseActivity();
+        });
+
+        bt_morsealpha.setOnClickListener((view) -> {
+            startMorseAlphaActivity();
         });
     }
 }

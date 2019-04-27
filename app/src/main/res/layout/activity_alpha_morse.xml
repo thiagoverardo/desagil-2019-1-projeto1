@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:columnCount="2"
+    android:rowCount="2"
+    tools:context=".AlphaMorseActivity">
+
+    <Button
+        android:id="@+id/back_button"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_gravity="top"
+        android:layout_columnSpan="2"
+        android:text="back"/>
+
+    <TextView
+        android:id="@+id/dict_list1"
+        android:paddingLeft="100dp"
+        android:textColor="@android:color/black"
+        android:layout_rowWeight="1"
+        android:layout_columnWeight="1"
+        android:textSize="20dp"
+        ></TextView>
+
+    <TextView
+        android:id="@+id/dict_list2"
+        android:paddingLeft="100dp"
+        android:textColor="@android:color/black"
+        android:layout_rowWeight="1"
+        android:layout_columnWeight="1"
+        android:textSize="20dp"
+        ></TextView>
+
+</GridLayout>
