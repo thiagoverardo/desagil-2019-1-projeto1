@@ -233,23 +233,21 @@ public class Translator {
     // Você deve mudar o recheio deste método, de
     // acordo com os requisitos não-funcionais.
     public char morseToChar(String code) {
-        int lenght = code.length();
         Node current = root;
 
-        if (lenght <= 5) {
-            for (int i = 0; i < code.length(); i++) {
-                if (current != null) {
-                    char dot_dash = code.charAt(i);
+        for (int i = 0; i < code.length(); i++) {
+            char dot_dash = code.charAt(i);
 
-                    if (dot_dash == '.') {
-                        current = current.getLeft();
-                    } else if (dot_dash == '-') {
-                        current = current.getRight();
-                    }
-                }
+            if (dot_dash == '.') {
+                current = current.getLeft();
+            } else if (dot_dash == '-') {
+                current = current.getRight();
             }
+        }
+        if (current != null) {
             return current.getValue();
-        } else {
+        }
+        else {
             return ' ';
         }
     }
