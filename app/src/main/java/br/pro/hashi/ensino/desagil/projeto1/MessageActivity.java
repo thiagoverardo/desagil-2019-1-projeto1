@@ -7,6 +7,8 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.Objects;
+
 public class MessageActivity extends AppCompatActivity {
     public static final String MESSAGE = "br.pro.hashi.ensino.desagil.projeto1.MESSAGE";
 
@@ -84,7 +86,7 @@ public class MessageActivity extends AppCompatActivity {
             String code = morse.getText().toString();
             if (code.length() <= 5) {
                 char letra = translator.morseToChar(code);
-                if(code == ""){
+                if(Objects.equals(code, "")){
                     alfanum.setText(alfanum.getText() + " ");
                 } else if(letra == ' '){
                     alfanum.setText(alfanum.getText());
@@ -132,12 +134,8 @@ public class MessageActivity extends AppCompatActivity {
             return true;
         });
 
-        bt_alphamorse.setOnClickListener((view) -> {
-            startAlphaMorseActivity();
-        });
+        bt_alphamorse.setOnClickListener((view) -> startAlphaMorseActivity());
 
-        bt_morsealpha.setOnClickListener((view) -> {
-            startMorseAlphaActivity();
-        });
+        bt_morsealpha.setOnClickListener((view) -> startMorseAlphaActivity());
     }
 }

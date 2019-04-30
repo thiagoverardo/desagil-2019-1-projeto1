@@ -109,9 +109,7 @@ public class PhoneActivity extends AppCompatActivity {
             return true;
         });
 
-        bt_back.setOnClickListener((view) -> {
-            startMessageActivity();
-        });
+        bt_back.setOnClickListener((view) -> startMessageActivity());
 
 
         bt_brother.setOnClickListener((view) -> numero.setText("11111111"));

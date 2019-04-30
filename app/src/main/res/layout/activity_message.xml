@@ -99,7 +99,8 @@
         android:layout_columnSpan="3"
         android:layout_gravity="fill_horizontal"
         android:layout_rowWeight="1"
-        android:text="Enter" />
+        android:text="⏎"
+        android:textSize="40dp" />
 
     <Button
         android:id="@+id/backspace_button"

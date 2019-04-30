@@ -32,9 +32,7 @@ public class MorseAlphaActivity extends AppCompatActivity {
         TextView lista6 = findViewById(R.id.dict_list6);
         Translator translator = new Translator();
 
-        bt_back.setOnClickListener((view) -> {
-            startMessageActivity();
-        });
+        bt_back.setOnClickListener((view) -> startMessageActivity());
 
         lista1.setText("");
         lista2.setText("");

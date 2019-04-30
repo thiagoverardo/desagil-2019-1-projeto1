@@ -7,6 +7,7 @@ import java.util.Queue;
 // Não é permitido mudar nada nessa classe
 // exceto o recheio dos três métodos.
 
+@SuppressWarnings("SuspiciousNameCombination")
 public class Translator {
     private final Node root;
     private final HashMap<Character, Node> map;
@@ -246,8 +247,7 @@ public class Translator {
         }
         if (current != null) {
             return current.getValue();
-        }
-        else {
+        } else {
             return ' ';
         }
     }
