@@ -91,6 +91,7 @@
         android:layout_gravity="fill_horizontal"
         android:layout_columnSpan="1"
         android:layout_rowWeight="1.5"
+        android:textStyle="bold"
         android:text="⏎"
         android:textSize="40dp" />
 
