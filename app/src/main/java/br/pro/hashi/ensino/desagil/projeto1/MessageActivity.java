@@ -82,14 +82,20 @@ public class MessageActivity extends AppCompatActivity {
 
         bt_enter.setOnClickListener((view) -> {
             String code = morse.getText().toString();
-            char letra = translator.morseToChar(code);
-            if(code == ""){
-                alfanum.setText(alfanum.getText() + " ");
-            } else if(letra == ' '){
+            if (code.length() <= 5) {
+                char letra = translator.morseToChar(code);
+                if(code == ""){
+                    alfanum.setText(alfanum.getText() + " ");
+                } else if(letra == ' '){
+                    alfanum.setText(alfanum.getText());
+                    showToast("Caractere inválido!");
+                } else{
+                    alfanum.setText(alfanum.getText().toString() + letra);
+                }
+            }
+            else {
                 alfanum.setText(alfanum.getText());
                 showToast("Caractere inválido!");
-            } else{
-                alfanum.setText(alfanum.getText().toString() + letra);
             }
             morse.setText("");
         });

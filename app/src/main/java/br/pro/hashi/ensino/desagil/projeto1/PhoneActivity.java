@@ -42,7 +42,8 @@ public class PhoneActivity extends AppCompatActivity {
         TextView morse = findViewById(R.id.morse_field);
         Button bt_morse  = findViewById(R.id.morse_button);
         Button bt_send = findViewById(R.id.send_button);
-        Button bt_back = findViewById(R.id.backspace_button);
+        Button bt_backspace = findViewById(R.id.backspace_button);
+        Button bt_back = findViewById(R.id.back_button);
         Button bt_cuidador = findViewById(R.id.number_cuidador);
         Button bt_brother = findViewById(R.id.number_brother);
         Translator translator = new Translator();
@@ -58,12 +59,18 @@ public class PhoneActivity extends AppCompatActivity {
 
         bt_send.setOnClickListener((view) -> {
             String code = morse.getText().toString();
-            char letra = translator.morseToChar(code);
-            if (letra == ' ') {
+            if (code.length() == 5) {
+                char letra = translator.morseToChar(code);
+                if (letra == ' ') {
+                    numero.setText(numero.getText());
+                    showToast("Caractere inválido!");
+                } else {
+                    numero.setText(numero.getText().toString() + letra);
+                }
+            }
+            else {
                 numero.setText(numero.getText());
                 showToast("Caractere inválido!");
-            } else {
-                numero.setText(numero.getText().toString() + letra);
             }
             morse.setText("");
         });
@@ -86,7 +93,7 @@ public class PhoneActivity extends AppCompatActivity {
             return true;
         });
 
-        bt_back.setOnClickListener((view) -> {
+        bt_backspace.setOnClickListener((view) -> {
             String escrito = numero.getText().toString();
             int tamanho = escrito.length();
             if (tamanho != 0) {
@@ -97,10 +104,15 @@ public class PhoneActivity extends AppCompatActivity {
             }
         });
 
-        bt_back.setOnLongClickListener((view) -> {
+        bt_backspace.setOnLongClickListener((view) -> {
             numero.setText("");
             return true;
         });
+
+        bt_back.setOnClickListener((view) -> {
+            startMessageActivity();
+        });
+
 
         bt_brother.setOnClickListener((view) -> numero.setText("11111111"));
 
