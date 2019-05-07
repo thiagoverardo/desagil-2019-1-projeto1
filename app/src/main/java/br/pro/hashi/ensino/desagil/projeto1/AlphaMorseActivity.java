@@ -55,17 +55,40 @@ public class AlphaMorseActivity extends AppCompatActivity {
 
         int tamanho = listaLetras.size();
 
-        for (String letra : listaLetras.subList(0, tamanho / 2)) {
-            lista1.setText(lista1.getText() + letra + "\n");
-            lista2.setText(lista2.getText() + "|\n");
-            lista3.setText(lista3.getText() + "" + translator.charToMorse(letra.charAt(0)) + "\n");
+        StringBuilder texto1 = new StringBuilder();
+        StringBuilder texto2 = new StringBuilder();
+        StringBuilder texto3 = new StringBuilder();
+        StringBuilder texto4 = new StringBuilder();
+        StringBuilder texto5 = new StringBuilder();
+        StringBuilder texto6 = new StringBuilder();
+
+        for (int i = listaLetras.subList(0, tamanho / 2).size() - 1; i >= 0; i--) {
+            String letra = listaLetras.subList(0, tamanho / 2).get(i);
+            texto1.insert(0, letra);
+            texto1.insert(0, "\n");
+            texto2.insert(0, "|");
+            texto2.insert(0, "\n");
+            texto3.insert(0, translator.charToMorse(letra.charAt(0)));
+            texto3.insert(0, "\n");
         }
 
-        for (String letra : listaLetras.subList(tamanho / 2, tamanho)) {
-            lista4.setText(lista4.getText() + letra + "\n");
-            lista5.setText(lista5.getText() + "|\n");
-            lista6.setText(lista6.getText() + "" + translator.charToMorse(letra.charAt(0)) + "\n");
+        lista1.setText(texto1);
+        lista2.setText(texto2);
+        lista3.setText(texto3);
+
+        for (int i = listaLetras.subList(tamanho / 2, tamanho).size() - 1; i >= 0; i--) {
+            String letra = listaLetras.subList(tamanho / 2, tamanho).get(i);
+            texto4.insert(0, letra);
+            texto4.insert(0, "\n");
+            texto5.insert(0, "|");
+            texto5.insert(0, "\n");
+            texto6.insert(0, translator.charToMorse(letra.charAt(0)));
+            texto6.insert(0, "\n");
         }
+
+        lista4.setText(texto4);
+        lista5.setText(texto5);
+        lista6.setText(texto6);
 
     }
 }

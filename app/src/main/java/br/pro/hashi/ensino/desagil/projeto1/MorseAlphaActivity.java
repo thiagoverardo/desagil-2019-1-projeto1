@@ -45,16 +45,39 @@ public class MorseAlphaActivity extends AppCompatActivity {
 
         int tamanho = lista.size();
 
-        for (String code : lista.subList(0, tamanho / 2)) {
-            lista1.setText(lista1.getText() + code + "\n");
-            lista2.setText(lista2.getText() + "|\n");
-            lista3.setText(lista3.getText() + "" + translator.morseToChar(code) + "\n");
+        StringBuilder texto1 = new StringBuilder();
+        StringBuilder texto2 = new StringBuilder();
+        StringBuilder texto3 = new StringBuilder();
+        StringBuilder texto4 = new StringBuilder();
+        StringBuilder texto5 = new StringBuilder();
+        StringBuilder texto6 = new StringBuilder();
+
+        for (int i = lista.subList(0, tamanho / 2).size() - 1; i >= 0; i--) {
+            String code = lista.subList(0, tamanho / 2).get(i);
+            texto1.insert(0, code);
+            texto1.insert(0, "\n");
+            texto2.insert(0, "|");
+            texto2.insert(0, "\n");
+            texto3.insert(0, translator.morseToChar(code));
+            texto3.insert(0, "\n");
         }
 
-        for (String code : lista.subList(tamanho / 2, tamanho)) {
-            lista4.setText(lista4.getText() + code + "\n");
-            lista5.setText(lista5.getText() + "|\n");
-            lista6.setText(lista6.getText() + "" + translator.morseToChar(code) + "\n");
+        lista1.setText(texto1);
+        lista2.setText(texto2);
+        lista3.setText(texto3);
+
+        for (int i = lista.subList(tamanho / 2, tamanho).size() - 1; i >= 0; i--) {
+            String code = lista.subList(tamanho / 2, tamanho).get(i);
+            texto4.insert(0, code);
+            texto4.insert(0, "\n");
+            texto5.insert(0, "|");
+            texto5.insert(0, "\n");
+            texto6.insert(0, translator.morseToChar(code));
+            texto6.insert(0, "\n");
         }
+
+        lista4.setText(texto4);
+        lista5.setText(texto5);
+        lista6.setText(texto6);
     }
 }
