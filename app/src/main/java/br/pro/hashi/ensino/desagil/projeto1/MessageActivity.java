@@ -58,7 +58,7 @@ public class MessageActivity extends AppCompatActivity {
         Button bt_message2 = findViewById(R.id.message2);
         Button bt_message3 = findViewById(R.id.message3);
         Button bt_message4 = findViewById(R.id.message4);
-        Button bt_morse  = findViewById(R.id.morse_button);
+        Button bt_morse = findViewById(R.id.morse_button);
         Button bt_enter = findViewById(R.id.enter_button);
         Button bt_back = findViewById(R.id.backspace_button);
         Button bt_alphamorse = findViewById(R.id.alpha_morse);
@@ -86,16 +86,15 @@ public class MessageActivity extends AppCompatActivity {
             String code = morse.getText().toString();
             if (code.length() <= 5) {
                 char letra = translator.morseToChar(code);
-                if(Objects.equals(code, "")){
+                if (Objects.equals(code, "")) {
                     alfanum.setText(alfanum.getText() + " ");
-                } else if(letra == ' '){
+                } else if (letra == ' ') {
                     alfanum.setText(alfanum.getText());
                     showToast("Caractere inválido!");
-                } else{
+                } else {
                     alfanum.setText(alfanum.getText().toString() + letra);
                 }
-            }
-            else {
+            } else {
                 alfanum.setText(alfanum.getText());
                 showToast("Caractere inválido!");
             }

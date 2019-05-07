@@ -1,10 +1,11 @@
 package br.pro.hashi.ensino.desagil.projeto1;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.widget.Button;
 import android.widget.TextView;
+
 import java.util.Collections;
 import java.util.LinkedList;
 
@@ -45,7 +46,7 @@ public class AlphaMorseActivity extends AppCompatActivity {
 
         LinkedList<String> listaLetras = new LinkedList<>();
 
-        for (String code: lista) {
+        for (String code : lista) {
             String letra = String.valueOf(translator.morseToChar(code));
             listaLetras.add(letra);
         }
@@ -54,13 +55,13 @@ public class AlphaMorseActivity extends AppCompatActivity {
 
         int tamanho = listaLetras.size();
 
-        for (String letra: listaLetras.subList(0, tamanho / 2)) {
+        for (String letra : listaLetras.subList(0, tamanho / 2)) {
             lista1.setText(lista1.getText() + letra + "\n");
             lista2.setText(lista2.getText() + "|\n");
             lista3.setText(lista3.getText() + "" + translator.charToMorse(letra.charAt(0)) + "\n");
         }
 
-        for (String letra: listaLetras.subList(tamanho / 2, tamanho)) {
+        for (String letra : listaLetras.subList(tamanho / 2, tamanho)) {
             lista4.setText(lista4.getText() + letra + "\n");
             lista5.setText(lista5.getText() + "|\n");
             lista6.setText(lista6.getText() + "" + translator.charToMorse(letra.charAt(0)) + "\n");

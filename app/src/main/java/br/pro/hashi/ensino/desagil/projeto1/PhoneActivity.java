@@ -40,7 +40,7 @@ public class PhoneActivity extends AppCompatActivity {
         TextView mensagem = findViewById(R.id.text_message);
         TextView numero = findViewById(R.id.edit_number);
         TextView morse = findViewById(R.id.morse_field);
-        Button bt_morse  = findViewById(R.id.morse_button);
+        Button bt_morse = findViewById(R.id.morse_button);
         Button bt_send = findViewById(R.id.send_button);
         Button bt_backspace = findViewById(R.id.backspace_button);
         Button bt_back = findViewById(R.id.back_button);
@@ -67,8 +67,7 @@ public class PhoneActivity extends AppCompatActivity {
                 } else {
                     numero.setText(numero.getText().toString() + letra);
                 }
-            }
-            else {
+            } else {
                 numero.setText(numero.getText());
                 showToast("Caractere inválido!");
             }
